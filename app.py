@@ -13,6 +13,7 @@ mini = MiniPhotoshop()
 
 app = Flask(__name__)
 CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 def convertStr2Img(image_string,name="tmp.jpg"):
   image_data = base64.b64decode(str(image_string).split(',')[-1])

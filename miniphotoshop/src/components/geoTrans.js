@@ -1,6 +1,7 @@
 import { Button, Card, InputNumber, Row, Col,Space, Divider } from 'antd';
 import axios from 'axios';
 import React, { useState } from 'react';
+import { RedoOutlined,UndoOutlined } from '@ant-design/icons';
 
 const GeoTrans = ({image}) => {
   const [width,setWidth] = useState(0)
@@ -80,16 +81,16 @@ const GeoTrans = ({image}) => {
         <Row>
           <Divider>Resize</Divider>
           <Space>
-            <InputNumber addonBefore='width' min={0} onChange={e=>setWidth(e)} />
-            <InputNumber addonBefore='hight' min={0} onChange={e=>setHight(e)} />
+            <InputNumber addonBefore='width' addonAfter="%" min={0} onChange={e=>setWidth(e)} />
+            <InputNumber addonBefore='hight' addonAfter="%" min={0} onChange={e=>setHight(e)} />
             <Button onClick={handleWH}>Ok</Button>
           </Space>
         </Row>
         <Row>
           <Divider>Rotate</Divider>
           <Space>
-            <Button onClick={handleCW}>CW</Button>
-            <Button onClick={handleCCW}>CCW</Button>
+            <Button onClick={handleCW}><RedoOutlined /></Button>
+            <Button onClick={handleCCW}><UndoOutlined /></Button>
             <InputNumber addonBefore='degree' min={0} onChange={e=>setFlibDegree(e)} />
             <Button onClick={handleDegree}>Ok</Button>
           </Space>

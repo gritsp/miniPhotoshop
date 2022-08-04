@@ -34,7 +34,7 @@ const App = () => {
             title="Mini Photoshop"
           />
           <Row>
-          <Col span={16} style={{paddingLeft:10}}>
+          <Col span={14} style={{paddingLeft:10}}>
             {showUpload?(<UploadImage image={handleImg}/>):(
             <Space direction="vertical">
               <img src={img}/>
@@ -44,7 +44,7 @@ const App = () => {
             )}
             
           </Col>
-          <Col span={8}>
+          <Col span={10}>
             <HeaderTool image={handleImg}/>
           </Col>
           </Row>
